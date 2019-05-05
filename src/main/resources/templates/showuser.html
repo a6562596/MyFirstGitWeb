@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>展示用户信息</title>
+</head>
+<body>
+	<table border="1" style="width: 300px">
+		<tr>
+			<th>用户Id</th>
+			<th>用户姓名</th>
+			<th>用户年龄</th>
+			<th>操作</th>
+			<th>删除</th>
+		</tr>
+		
+		<tr th:each="user : ${list}"><!-- list迭代的用th:each th:text -->
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.name}"></td>
+			<td th:text="${user.age}"></td>
+			<td>
+				<a th:href="@{/user/findUserById(id=${user.id})}">更新用户</a>
+			</td>
+			<td>
+				<a th:href="@{/user/delUser(id=${user.id})}">删除</a>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

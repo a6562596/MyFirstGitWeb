@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>根据id去查询用户</title>
+</head>
+<body>
+	<!-- @{}:表示项目的根 -->
+	<form th:action="@{/user/updateUser}" method="post"><!-- 不是list用th:field -->
+		<input type="hidden" name="id" th:field="${user.id}"/>
+		用户姓名：<input type="text" name="name" th:field="${user.name}"/><br/>
+		用户年龄：<input type="text" name="age" th:field="${user.age}"/><br/>
+		<input type="submit" value="确定"/><br/>
+	</form>
+</body>
+</html>
